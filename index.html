@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rossana Lidador | Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/96bb1912ec.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+</head>
+<body>
+<!-- Desenvolvido por waldemar d'Orey, contact me : +244 947214312 -->
+
+    <section>
+        <!-- for the colors -->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+<!-- real content -->
+</section>
+    <div class="test">
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+
+                <div class="slide first">
+                    <img src="./1.jpg" alt="">
+                </div>
+                <div class="slide ">
+                    <img src="./2.jpg" alt="">
+                </div>
+                <div class="slide ">
+                    <img  style="margin-top: -70px" src="./3.jpg" alt="">
+                </div>
+                <div  style="margin-top: -60px" class="slide">
+                    <img src="./4.jpg" alt="">
+                </div>
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+
+                <div class="navigation-manual">
+
+                    <label for="radio1" class="manual-btn"></label>
+
+                    <label for="radio2" class="manual-btn"></label>
+
+                    <label for="radio3" class="manual-btn"></label>
+
+                    <label for="radio4" class="manual-btn"></label>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="card">
+        
+        <div class="text-Card">
+            <h2>Rossana Lidador</h2>
+            <h3>Maquiadora</h3>
+        </div>
+        <div class="imgBox"></div>
+       <img class="img-principal" src="./Principal.jpg" alt="">
+      
+       <p class="p-text">Mulher de <br> influência por <br> natureza, mulher <br> de influência cristã<br> por escolha 💖<span class="heart">💖</span></p>
+    </div>
+
+
+
+
+
+
+        <ul>
+            <li><a onclick="redirect()"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+            <li><a onclick="redirect2()"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+document.addEventListener("mousemove",(e)=>
+{
+let body = document.querySelector("body");
+let heart = document.createElement("span");
+heart.setAttribute("class","heart");
+let a = e.offsetX;
+let b = e.offsetY;
+let size = Math.random() * 100;
+
+heart.style.left = a+"px";
+heart.style.top = b+"px"; 
+
+heart.style.width = 20+size + "px";
+heart.style.height = 20+size + "px";
+
+
+body.appendChild(heart);
+setTimeout(()=> heart.remove(),1000);
+
+
+
+})
+
+
+
+
+function redirect()
+{
+    setTimeout(()=> window.open("https://api.whatsapp.com/send?phone=244929954488&text=*Ol%C3%A1!*",'_blank'), 700)
+    
+}
+
+function redirect2()
+{
+    setTimeout(()=> window.open("https://www.instagram.com/rossana_lidador/",'_blank'), 700)
+    
+}
+
+
+var counter = 1;
+setInterval(function(){
+
+document.getElementById("radio" + counter).checked = true;
+counter++;
+if(counter > 4)
+{
+    counter = 1;
+}
+
+
+
+},4000)
+
+
+    </script>
+
+
+    
+</body>
+</html>

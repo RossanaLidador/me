@@ -1,0 +1,542 @@
+*{
+
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+
+ }
+
+ body{
+box-sizing: border-box;
+overflow-x: hidden;
+ }
+
+
+ section 
+ {
+     position: absolute;
+     width: 100%;
+     height: 150%;
+     display: flex;
+    overflow: hidden;
+     background: linear-gradient(to bottom,#ff4f8b,#dff1ff);
+ }
+
+section::before
+{
+    content: "";
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    bottom: 0px;
+    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+
+ section .color
+ {
+     position: absolute;
+     filter: blur(150px);
+ }
+
+ section .color:nth-child(1)
+ {
+     background: #ff359b;
+     width: 100%;
+     height: 100px;
+     top: -350px;
+    
+ }
+
+ section .color:nth-child(2)
+ {
+     background: #00d2ff;
+     width: 100%px;
+     height: 100px;
+     bottom: -150px;
+     left: 100px;
+ }
+
+section .color:nth-child(3)
+ {
+     background: #fffd87;
+     width: 100%px;
+     height: 100px;
+     bottom: 50px;
+     left: 100px;
+     right: 0px;
+ }
+
+ ul{
+     z-index: 2;
+     display: flex;
+ }
+
+ ul li 
+ {
+    list-style: none;
+margin-left:35%;
+ }
+
+
+
+
+ ul li a
+ {
+     bottom: 20px;
+     width: 80px;
+     height: 80px;
+     display: inline-block;
+    
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     text-decoration: none;
+     font-size: 2em;
+     border: 1px solid rgba(255,255,255,0.4);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+     border-radius: 10px;
+     backdrop-filter: blur(2px);
+    transition:  0.5s;;
+    overflow: hidden;
+    cursor: pointer;
+ }
+
+ ul 
+ {
+    width: calc(100% - 160px);
+    margin: auto;
+    position: fixed;
+    bottom: 20px;
+
+ }
+
+ ul li a:hover
+ {
+
+transform: translateY(-20px);
+
+}
+
+
+ul li a::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255,255, .5);
+    transform: skewX(45deg) translateX(150px);
+    transition: .5s;
+}
+
+ul li a:hover::before
+{
+    transform: skewX(45deg) translateX(-150px);
+
+}
+
+
+
+
+.heart
+{
+    position: absolute;
+    background: url(heart.png);
+    pointer-events: none;
+
+    transform: translate(-50%,-50%);
+    animation: heartAnimation 2s linear infinite;
+    background-size: cover;
+    z-index: 10;
+}
+
+
+@keyframes heartAnimation
+{
+0%{     transform: translate(-50%,-50%);
+    opacity: 1;
+    filter: hue-rotate(0deg);
+}
+
+100%{     transform: translate(-50%,-1050%);
+    filter: hue-rotate(720deg);
+    opacity: 0;
+}
+    
+    
+
+}
+
+
+
+
+
+.slider
+
+{
+
+    width: 90vw;
+    max-width: 450px;
+    height: 300px;
+left: 5%;
+position: relative;
+top: 40px;
+border-radius: 10px;
+overflow: hidden;
+
+}
+
+
+
+
+.slides
+{
+    height: 300px;
+
+    width: 500%;
+    display: flex;
+
+}
+
+.slides input{
+    display: none;
+}
+
+.slide
+{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img
+{
+
+margin-top: -30px;
+
+width: 100%;
+
+
+
+
+}
+
+
+.navigation-manual
+{
+position: absolute;
+width: 100%;
+display: flex;
+justify-content: center;
+bottom: 10px;
+
+}
+
+
+.manual-btn:not(:last-child)
+{
+
+margin-right: 40px;
+
+}
+
+
+
+.manual-btn
+{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:hover
+{
+
+    background: #40D3DC;
+
+}
+
+#radio1:checked ~ .first
+{
+    margin-left: 0 ;
+}
+
+#radio2:checked ~ .first
+{
+    margin-left: -20% ;
+}
+
+#radio3:checked ~ .first
+{
+    margin-left: -40% ;
+}
+
+#radio4:checked ~ .first
+{
+    margin-left: -60% ;
+}
+
+
+
+
+.navigation-auto
+{
+
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.navigation-auto div{
+
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child)
+{
+    margin-right: 40px;
+}
+
+
+#radio1:checked ~ .navigation-auto .auto-btn1
+{
+    background: #40D3DC;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2
+{
+    background: #40D3DC;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3
+{
+    background: #40D3DC;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4
+{
+    background: #40D3DC;
+}
+
+.card
+{
+    position: absolute;
+    max-width:450px;
+    height: 300px;
+    display: flex;
+
+    background: rgba(255,255,255,0.5);
+    border-radius: 20px;
+    border: 1px solid #fff;
+    bottom: -200px;
+    left: 5%;
+    overflow: hidden;
+}
+
+.card::before
+{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    right: -60%;
+    transform: skew(345deg);
+    backdrop-filter: blur(2px);
+
+    
+}
+
+
+
+
+
+.text-Card
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+left: -15px;
+top: -15px;
+
+color: rgb(133, 11, 232);
+    /* backdrop-filter: blur(2px); */
+
+border-radius: 20px;
+padding: 20px;
+padding-bottom: 0;
+
+}
+
+.p-text
+{
+
+
+
+    top: 40%;
+position: absolute;
+right: 15px;
+width: 200px;
+text-align: right;
+letter-spacing: 1px;
+font-weight: 700;
+color: pink;
+font-size: 1rem;
+}
+
+
+.p-text::selection,.text-Card::selection
+{
+
+color: black;
+filter: hue-rotate(450deg);
+
+
+
+}
+
+
+h3{
+
+    color: black;
+  }
+
+
+  .img-principal
+  {
+    width: 100%;
+    margin-top: -230px;
+
+  }
+
+
+
+
+
+
+/* media queries */
+
+@media screen and (max-width:500px)
+{
+
+
+
+.card
+{
+    width:90vw;
+    height: 250px;
+
+}
+}
+
+@media screen and (max-width:400px)
+{
+
+.slider
+{
+    width:90vw;
+    height: 190px;      
+
+} 
+
+.card
+{
+    width:90vw;
+    height: 190px;
+    bottom: -10px
+
+}
+}
+
+@media screen and (min-width:500px)
+{
+
+    .slider{
+left: 10%;        
+    }
+
+   
+}
+
+@media screen and (min-width:560px)
+{
+
+    .slider{
+left: 15%;        
+    }
+
+    .card{
+        left: 15%;        
+            }
+
+}
+
+@media screen and (min-width:700px)
+{
+
+    .slider{
+left: 20%;   
+    }
+    .card{
+        left: 20%;        
+            }
+}
+
+@media screen and (min-width:840px)
+{
+
+    .slider{
+left: 25%;        
+    }
+
+    .card{
+        left: 25%;        
+            }
+
+}
+
+@media screen and (min-width:900px)
+{
+
+    .slider{
+left: 30%;        
+    }
+    .card{
+        left: 30%;        
+            }
+}
+
+
+@media screen and (min-width:1100px)
+{
+
+    .slider{
+left: 35%;        
+           }
+
+              .card{
+        left: 37%;        
+            }
+
+}
+
+
+
+
